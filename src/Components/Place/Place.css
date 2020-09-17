@@ -1,0 +1,35 @@
+
+.card-img {
+    padding-right:60px ;
+}
+.card-img img{
+    width: 200px;
+    height: 300px;
+}
+
+.card-img img:last-child {
+    margin-right: -160px;
+}
+.card-img a{
+    color: #ffffff;
+}
+.card-img img{
+    position: relative;
+    transition: all .4s ease-in-out;
+}
+.card-img h4{
+    position: absolute;
+    bottom:0;
+    left: 20%;
+}
+.card-img img:hover{
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: all .4s ease-in-out;
+}
+.card-img img:hover {
+    border: 3px solid orange;
+    border-radius: 20px;
+    transition: .1s;
+
+} 

@@ -1,0 +1,19 @@
+.hotel-img img{
+    width: 160px;
+    height: 160px;
+}
+.mapStyling iframe{
+    margin-top: 80px;
+    height: 60vh ;
+    width: 90%;
+}
+.card{
+    background-color:transparent;
+    color: white;
+    border: 2px solid orange;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+.card a {
+    color: white;
+}

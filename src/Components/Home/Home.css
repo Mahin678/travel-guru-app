@@ -1,0 +1,18 @@
+.home-container{
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+         url('https://i.imgur.com/GcPr3B5.jpg-bg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat:no-repeat;
+}.home-wrapper{
+    height: 100vh;
+}
+.header-content-wrapper {
+        color:white;
+        padding:50px 0px;
+}
+.header-content-wrapper p {
+    margin:50px auto;
+    max-width: 500px;
+    text-align: center;
+}

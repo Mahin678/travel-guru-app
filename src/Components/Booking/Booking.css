@@ -1,0 +1,23 @@
+.start-booking-form form{
+    width:22rem;
+    padding:20px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+.start-booking-form label {
+    color:darkgray;
+}
+.form-calendar {
+    overflow: hidden;
+}
+.form-calendar input {
+    width:140px;
+    margin:10px 10px;
+}
+.form-calendar label {
+    margin:0px 10px;
+}
+.start-booking-form form input::placeholder {
+    color:black;
+    font-weight:bold;
+  }

@@ -1,0 +1,38 @@
+.login-form{
+    margin:10px 20px;
+    width: 400px;
+    text-align: left;
+    border-radius:10px;
+}
+.login-form {
+    background-color:transparent;
+    border:1px solid orange;
+    color: white;
+}
+.or-line span {
+    width: 90px;
+    height: 1px;
+    color: #ffffff;
+    display:inline-block;
+    background-color: white;
+    margin:3px;
+}
+.sign-btn{
+    width: 350px;
+    border-radius:50px;
+    background-color:transparent;
+    border:2px solid orange;
+    color: white;
+    margin-top: 10px;
+}
+.sign-btn:hover{
+    background-color:cadetblue
+}
+.sign-btn:focus{
+    border: 3px solid blue;
+    outline: none;
+    border-radius:50px;
+}
+.sign-btn img{
+    height: 30px;
+}

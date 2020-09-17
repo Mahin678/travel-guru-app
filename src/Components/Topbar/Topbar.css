@@ -1,0 +1,19 @@
+nav{
+    background:transparent;
+    color: #ffffff;
+}
+.navbar-nav a {
+    color: #ffffff;
+}
+.custom-logo{
+    height: 80px;
+    filter:contrast(0%) brightness(250%);
+}
+.custom-input{
+    width: 320px !important;
+    background-color: transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+}
+.custom-input::placeholder {
+    color: white;
+  }

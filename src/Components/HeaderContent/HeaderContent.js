@@ -3,8 +3,6 @@ import { UserContext } from '../../App';
 import './HeaderContent.css'
 const HeaderContent = (props) => {
     const{name,id,img, description} = props.getPlace;
-    const {getPlaceInfo} = useContext(UserContext)
-    const [ setPlaceData] = getPlaceInfo;
      return (
         <div className="header-content header-content-wrapper  mt-5" >
       <h1 className="display-4 text-center" >{name}</h1>

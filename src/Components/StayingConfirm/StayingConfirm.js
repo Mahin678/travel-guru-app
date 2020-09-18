@@ -13,6 +13,7 @@ const StayingConfirm = () => {
         storId = PlaceData
     }
     const getPlace = placeInfo.find(data => data.id === storId)
+    const getHotails = Hotel.filter(hId =>  hId.id === PlaceData)
     console.log(PlaceData, "confonfirm")
     return (
         <div className="home-container" >
@@ -23,14 +24,14 @@ const StayingConfirm = () => {
                     <div className="card hotel">
                         <div className="row">
                             {
-                                Hotel.map(info =>
+                                getHotails.map(info =>
                                     <div className="col-lg-12">
                                         <div className="hotelInfo d-flex">
                                             <div className="hotel-img">
                                                 <img src={info.img} alt="" />
                                             </div>
                                             <div className="hotel-content m-3" >
-                                                <a href="/">    <h4>Happy Mornings Motel</h4></a>
+                                <a href="/">    <h4>{info.hotelName}</h4></a>
                                                 <p>{info.hotelDetails}</p>
                                                 <p>{info.price} Usd</p>
                                             </div>

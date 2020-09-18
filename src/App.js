@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Destinations from './Components/Destinations/Destinations';
 import StayingConfirm from './Components/StayingConfirm/StayingConfirm';
+import Error from './Components/Error/Error';
 
 export const UserContext = createContext()
 
@@ -34,9 +35,9 @@ function App(props) {
           <Route path="/news" >
             <Home></Home>
           </Route>
-          <PrivateRoute path="/destination" >
+          <Route path="/destination" >
             <Destinations></Destinations>
-          </PrivateRoute>
+          </Route>
           <PrivateRoute path="/StayingConfirm" >
             <StayingConfirm></StayingConfirm>
           </PrivateRoute>
@@ -46,11 +47,14 @@ function App(props) {
           <Route path="/Login" >
             <Login></Login>
           </Route>
-          <Route path="/contact" >
-            <Login></Login>
-          </Route>
+          <PrivateRoute path="/contact" >
+            <Destinations></Destinations>
+          </PrivateRoute>
           <Route path="/blog" >
             <Destinations></Destinations>
+          </Route>
+          <Route path="*" >
+            <Error></Error>
           </Route>
         </Switch>
       </Router>

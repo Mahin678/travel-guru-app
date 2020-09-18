@@ -26,7 +26,6 @@ const Login = () => {
       .then(result => {
         const { displayName, email } = result.user;
         const googleNewUser = { name: displayName, email: email }
-      UpdateUserName(displayName)
         setLoggedInUser(googleNewUser);
         history.replace(from);
         console.log(googleNewUser);
@@ -43,7 +42,6 @@ const Login = () => {
       var token = result.credential.accessToken;
       const { displayName, email } = result.user;
       const googleNewUser = { name: displayName, email: email }
-      UpdateUserName(displayName)
       setLoggedInUser(googleNewUser);
       history.replace(from);
       console.log(googleNewUser);
@@ -86,13 +84,14 @@ const Login = () => {
       firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
         .then(res => {
           const newUserInfo = { ...loggedInUser };
-          newUserInfo.error = " ";
-          history.replace(from);
           setLoggedInUser(newUserInfo)
+          UpdateUserName(newUserInfo.name)
+          history.replace(from);
+          console.log(newUserInfo.name)
         })
         .catch((error) => {
           const newUserInfo = { ...loggedInUser };
-          newUserInfo.error = error.message;
+          newUserInfo.massages = error.message;
           setLoggedInUser(newUserInfo)
         });
     }
@@ -100,9 +99,10 @@ const Login = () => {
       firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
         .then(res => {
           const newUserInfo = { ...loggedInUser };
-          newUserInfo.error = " ";
-          console.log("sign your user ", res.user);
+          newUserInfo.name =res.user.displayName;
+          setLoggedInUser(newUserInfo)
           history.replace(from);
+          console.log(newUserInfo.name)
         })
         .catch((error) => {
           const newUserInfo = { ...loggedInUser };
@@ -113,17 +113,18 @@ const Login = () => {
     event.preventDefault()
   }
   
-const UpdateUserName = (names) => {
+const UpdateUserName = (name) => {
   var user = firebase.auth().currentUser;
   user.updateProfile({
-    displayName:names
+    displayName:name
   }).then(function() {
-    // Update successful.
+    console.log("update successfull")
   }).catch(function(error) {
     console.log(error);
   });
 }
 
+  console.log(loggedInUser)
   return (
     <div className="home-container  pb-5" >
       <Topbar></Topbar>
@@ -161,7 +162,7 @@ const UpdateUserName = (names) => {
               </p> : <p className="text-center text-danger" > This {valid.name} is not valid </p>
             }
           </div>
-          <button type="submit" className="btn btn-warning  mt-3 d-block w-75 mx-auto ">Login</button>
+          <button type="submit" className="btn btn-warning  mt-3 d-block w-75 mx-auto "> {toggle ? "Sign up " :"Login"}</button>
         </form>
         {
           toggle ?

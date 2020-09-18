@@ -23,7 +23,6 @@ function App(props) {
     password: "",
     massages: ""
   })
-  console.log(loggedInUser)
   const [PlaceData, setPlaceData] = useState(0)
   return (
     <UserContext.Provider value={{ getPlaceInfo: [PlaceData, setPlaceData], UserInfo: [loggedInUser, setLoggedInUser] }}>
